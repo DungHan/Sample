@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Address\PostCode.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Address\PostCode.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="FastFuzzyStringMatcher" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="7.0.5" />
+    <PackageReference Include="Romanization.NET" Version="0.9.5" />
+    <PackageReference Include="Sinyi.Data.MsSqlClient" Version="6.0.7" />
+    <PackageReference Include="Ulid" Version="1.2.6" />
+  </ItemGroup>
+
+</Project>
