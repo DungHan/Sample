@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <UserSecretsId>7a948fbe-17ca-404e-9a47-39b65cc70526</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Lucene.Net" Version="4.8.0-beta00016" />
+	<PackageReference Include="MDP.AspNetCore.Authentication.Jwt.Hosting" Version="6.0.13" />
+	<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+	<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+	<PackageReference Include="NLog.Config" Version="4.7.15" />
+	<PackageReference Include="Sinyi.AspNetCore.Metrics.Prometheus.Hosting" Version="6.0.2" />
+	<PackageReference Include="Sinyi.Data.MsSqlClient.Hosting" Version="6.0.2" />
+	<PackageReference Include="Sinyi.NetCore.Logging.Loki.Hosting" Version="6.0.5" />
+	<PackageReference Include="Sinyi.NetCore.Tracing.OpenTelemetry.Hosting" Version="6.0.4" />
+	<PackageReference Include="Sinyi.Schedulers.Clients.Hosting" Version="6.0.3" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\Sinyi.SuperAgent.WebPlatform\Sinyi.SuperAgent.WebPlatform.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Content Update="config\Development\Sinyi.Schedulers.Clients.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Development\Sinyi.Storages.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Local\Sinyi.Caching.Redis.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Local\Sinyi.MessageQueue.RabbitMQ.Lab.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Local\Sinyi.Schedulers.Clients.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Local\Sinyi.Storages.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Production\Sinyi.Schedulers.Clients.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Production\Sinyi.Storages.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Staging\Sinyi.Storages.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Sinyi.MessageQueue.MQTTnet.Hosting.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+		<Content Update="config\Local\Sinyi.Data.MsSqlClient.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Local\Sinyi.Net.Http.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Development\Sinyi.Data.MsSqlClient.Hosting.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Staging\Sinyi.Data.MsSqlClient.Hosting.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Production\Sinyi.Data.MsSqlClient.Hosting.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Development\Sinyi.Net.Http.Hosting.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Staging\Sinyi.Net.Http.Hosting.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="config\Production\Sinyi.Net.Http.Hosting.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\plist\" />
+	</ItemGroup>
+	
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+
+</Project>

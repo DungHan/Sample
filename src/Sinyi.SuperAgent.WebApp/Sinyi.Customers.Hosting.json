@@ -1,0 +1,238 @@
+{
+  "Sinyi.Customers": {
+
+    // CustomerContext
+    "CustomerContext": {
+      "CustomerRepository": "MemoryCacheCustomerRepository",
+      "CustomerBriefRepository": "MemoryCacheCustomerBriefRepository",
+      "CustomerCommunityRepository": "CacheCustomerCommunityRepository",
+      "CustomerDailyReportRepository": "CacheCustomerDailyReportRepository",
+      "CommunityActivityRepository": "CacheCommunityActivityRepository",
+      "IdentityTypeMapperRepository": "CacheIdentityTypeMapperRepository",
+      "SourceTypeRepository": "CacheSourceTypeRepository",
+      "OneIdRepository": "CacheRestOneIdRepository",
+      "BackgroundRepository": "CacheRestBackgroundRepository",
+      "BehaviorRepository": "CacheRestBehaviorRepository",
+      "FootprintRepository": "CacheRestFootprintRepository",
+      "WatchingAreaRepository": "CacheWatchingAreaRepository",
+      "WatchingRoadRepository": "CacheWatchingRoadRepository",
+      "WatchingCommunityRepository": "CacheWatchingCommunityRepository",
+      "WatchingProductRepository": "CacheWatchingProductRepository",
+      "OnlineBehaviorRepository": "CacheOnlineBehaviorRepository",
+      "OnlineMessageRepository": "CacheOnlineMessageRepository",
+      "OnlineActivityRepository": "CacheOnlineActivityRepository",
+      "BlackListRepository": "MemoryCacheBlackListRepository",
+      "NormalizationCustomerAddressRepository": "CacheNormalizationCustomerAddressRepository",
+      "CustomerClueRepository": "MemoryCacheCustomerClueRepository",
+      "CustomerClueProviderList": [
+        "ResignationAgentCustomerClueProvider"
+      ],
+      "EstablishDataRepository": "CacheEstablishDataRepository",
+      "InvalidPhoneNumberRepository": "CacheInvalidPhoneNumberRepository"
+    },
+
+
+    // CustomerRepository
+    "MemoryCacheCustomerRepository": {
+      "CustomerRepository": "RedisCacheCustomerRepository"
+    },
+    "RedisCacheCustomerRepository": {
+      "CustomerRepository": "AggregateCustomerRepository"
+    },
+    "AggregateCustomerRepository": {
+      "CustomerRepository": "SqlCustomerRepository",
+      "IntraCustomerRepository": "ConvertIntraCustomerRepository"
+    },
+    "ConvertIntraCustomerRepository": {
+      "CustomerRepository": "IntraCustomerRepository",
+      "SourceTypeMapperRepository": "CacheSourceTypeMapperRepository"
+    },
+    "IntraCustomerRepository": "",
+    "SqlCustomerRepository": "",
+
+
+    // CustomerBriefRepository
+    "MemoryCacheCustomerBriefRepository": {
+      "CustomerBriefRepository": "RedisCacheCustomerBriefRepository"
+    },
+    "RedisCacheCustomerBriefRepository": {
+      "CustomerBriefRepository": "AggregateCustomerBriefRepository"
+    },
+    "AggregateCustomerBriefRepository": {
+      "CustomerBriefRepositoryList": [
+        "IntraCustomerBriefRepository"
+      ]
+    },
+    "IntraCustomerBriefRepository": "",
+    "SqlCustomerBriefRepository": "",
+
+
+    // CustomerCommunityRepository
+    "CacheCustomerCommunityRepository": {
+      "CustomerCommunityRepository": "SqlCustomerCommunityRepository"
+    },
+    "AggregateCustomerCommunityRepository": {
+      "CustomerCommunityRepositoryList": [
+        "IntraCustomerCommunityRepository",
+        "SqlCustomerCommunityRepository"
+      ]
+    },
+    "IntraCustomerCommunityRepository": "",
+    "SqlCustomerCommunityRepository": "",
+
+
+    // CustomerDailyReportRepository
+    "CacheCustomerDailyReportRepository": {
+      "CustomerDailyReportRepository": "AggregateCustomerDailyReportRepository"
+    },
+    "AggregateCustomerDailyReportRepository": {
+      "CustomerDailyReportRepositoryList": [
+        "IntraCustomerDailyReportRepository",
+        "SqlCustomerDailyReportRepository"
+      ]
+    },
+    "IntraCustomerDailyReportRepository": "",
+    "SqlCustomerDailyReportRepository": "",
+
+
+    // SourceType
+    "CacheSourceTypeRepository": {
+      "SourceTypeRepository": "SqlSourceTypeRepository"
+    },
+    "SqlSourceTypeRepository": "",
+    "CacheSourceTypeMapperRepository": {
+      "SourceTypeMapperRepository": "SqlSourceTypeMapperRepository"
+    },
+    "SqlSourceTypeMapperRepository": "",
+
+
+    // BlackListRepository
+    "MemoryCacheBlackListRepository": {
+      "BlackListRepository": "AggregateBlackListRepository"
+    },
+    "AggregateBlackListRepository": {
+      "BlackListRepositoryList": [
+        "MarketingBlackListRepository",
+        "SqlBlackListRepository"
+      ]
+    },
+    "MarketingBlackListRepository": "",
+    "SqlBlackListRepository": "",
+
+
+    // NormalizationCustomerAddressRepository
+    "CacheNormalizationCustomerAddressRepository": {
+      "NormalizationCustomerAddressRepository": "SqlNormalizationCustomerAddressRepository"
+    },
+    "SqlNormalizationCustomerAddressRepository": "",
+
+
+    // CustomerClueRepository
+    "MemoryCacheCustomerClueRepository": {
+      "CustomerClueRepository": "RedisCacheCustomerClueRepository"
+    },
+    "RedisCacheCustomerClueRepository": {
+      "CustomerClueRepository": "SqlCustomerClueRepository"
+    },
+    "SqlCustomerClueRepository": "",
+
+
+    // CustomerClueProvider
+    "ResignationAgentCustomerClueProvider": "",
+
+
+    // DevelopConnection
+    "RestDevelopConnectionsRepository": "",
+
+
+    // InvalidPhoneNumberRepository
+    "CacheInvalidPhoneNumberRepository": {
+      "InvalidPhoneNumberRepository": "SqlInvalidPhoneNumberRepository"
+    },
+    "SqlInvalidPhoneNumberRepository": "",
+
+
+    // Behavior
+    // CommunityActivity
+    "CacheCommunityActivityRepository": {
+      "CommunityActivityRepository": "SqlCommunityActivityRepository"
+    },
+    "SqlCommunityActivityRepository": "",
+
+
+    // WatchingArea
+    "CacheWatchingAreaRepository": {
+      "WatchingAreaRepository": "SqlWatchingAreaRepository"
+    },
+    "SqlWatchingAreaRepository": "",
+
+
+    // WatchingRoad
+    "CacheWatchingRoadRepository": {
+      "WatchingRoadRepository": "SqlWatchingRoadRepository"
+    },
+    "SqlWatchingRoadRepository": "",
+
+
+    // WatchingCommunity
+    "CacheWatchingCommunityRepository": {
+      "WatchingCommunityRepository": "SqlWatchingCommunityRepository"
+    },
+    "SqlWatchingCommunityRepository": "",
+
+
+    // WatchingProduct
+    "CacheWatchingProductRepository": {
+      "WatchingProductRepository": "SqlWatchingProductRepository"
+    },
+    "SqlWatchingProductRepository": "",
+
+
+    // OnlineBehavior
+    "CacheOnlineBehaviorRepository": {
+      "OnlineBehaviorRepository": "AggregateOnlineBehaviorRepository"
+    },
+    "AggregateOnlineBehaviorRepository": {
+      "OnlineBehaviorRepositoryList": [
+        "SubscribeProductOnlineBehaviorRepository",
+        "SubscribeActualPricesOnlineBehaviorRepository",
+        "MessageProductOnlineBehaviorRepository",
+        "MessageCommunityOnlineBehaviorRepository",
+        "IMRecordOnlineBehaviorRepository",
+        "CollectProductOnlineBehaviorRepository"
+      ]
+    },
+    "SubscribeProductOnlineBehaviorRepository": "",
+    "SubscribeActualPricesOnlineBehaviorRepository": "",
+    "MessageProductOnlineBehaviorRepository": "",
+    "MessageCommunityOnlineBehaviorRepository": "",
+    "IMRecordOnlineBehaviorRepository": "",
+    "CollectProductOnlineBehaviorRepository": "",
+
+
+    // OnlineMessage
+    "CacheOnlineMessageRepository": {
+      "OnlineMessageRepository": "SqlOnlineMessageRepository"
+    },
+    "SqlOnlineMessageRepository": "",
+
+
+    // OnlineActivity
+    "CacheOnlineActivityRepository": {
+      "OnlineActivityRepository": "SqlOnlineActivityRepository"
+    },
+    "SqlOnlineActivityRepository": "",
+
+
+    // EstablishDataRepository
+    "CacheEstablishDataRepository": {
+      "EstablishDataRepository": "AggregateEstablishDataRepository"
+    },
+    "AggregateEstablishDataRepository": {
+      "EstablishDataRepository": "SqlEstablishDataRepository",
+      "IntraEstablishDataRepository": "IntraEstablishDataRepository"
+    },
+    "IntraEstablishDataRepository": "",
+    "SqlEstablishDataRepository": ""
+  }
+}

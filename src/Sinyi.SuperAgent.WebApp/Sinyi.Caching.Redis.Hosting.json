@@ -1,0 +1,12 @@
+{
+  "Sinyi.Caching.Redis": {
+
+    // RedisKeyValueCache
+    "RedisCacheClient": {
+      "RedisConfig": "",
+      "EnvironmentVariable": {
+        "ConnectionString": "Redis_Connection",
+        "KeyPrefix": "Redis_PrefixKey"
+      }
+    }
+} }

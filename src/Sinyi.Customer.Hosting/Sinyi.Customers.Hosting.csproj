@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MDP.Hosting" Version="6.0.13" />
+	<PackageReference Include="MDP.AspNetCore" Version="6.0.13" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sinyi.Customer.Accesses\Sinyi.Customers.Accesses.csproj" />
+    <ProjectReference Include="..\Sinyi.Customer\Sinyi.Customers.csproj" />
+  </ItemGroup>
+
+</Project>

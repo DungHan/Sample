@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="jieba.NET" Version="0.42.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Net.Http.Headers" Version="2.2.8" />
+    <PackageReference Include="Sinyi.Data.MsSqlClient" Version="6.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sinyi.Caching.Memory\Sinyi.Caching.Memory.csproj" />
+    <ProjectReference Include="..\Sinyi.Caching.Redis\Sinyi.Caching.Redis.csproj" />
+    <ProjectReference Include="..\Sinyi.Caching\Sinyi.Caching.csproj" />
+    <ProjectReference Include="..\Sinyi.Customer\Sinyi.Customers.csproj" />
+  </ItemGroup>
+
+</Project>

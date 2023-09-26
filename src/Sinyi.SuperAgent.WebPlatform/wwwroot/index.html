@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- title -->
+    <title>Sinyi.SuperAgent</title>
+
+    <!-- meta -->
+    <meta charset="utf-8" />
+
+    <!-- script -->
+    <script src="/mdp.web.js"></script>
+    <script language="javascript">
+        window.onload = function () {
+
+            // GetTokenByPassword
+            document.getElementById("getTokenByPassword.button").addEventListener("click", event => {
+
+                // Variables
+                const username = document.getElementById("getTokenByPassword.username").value;
+                const password = document.getElementById("getTokenByPassword.password").value;
+
+                // ActionModel
+                var actionModel = {};
+                actionModel.username = username;
+                actionModel.password = password;
+
+                // Post
+                postRequst("/Account/GetTokenByPassword", actionModel)
+
+                    // Success
+                    .then(function (response) {
+                        document.getElementById("getTokenByPassword.result").innerText = JSON.stringify(response, null, 2);
+                    })
+
+                    // Error
+                    .catch(function (error) {
+                        document.getElementById("getTokenByPassword.result").innerText = JSON.stringify(error, null, 2);
+                    });
+            });
+
+            // GetUserByToken
+            document.getElementById("getUserByToken.button").addEventListener("click", event => {
+
+                // Variables
+                var token = null;
+                if (document.getElementById("getTokenByPassword.result").innerText != "") {
+                    token = JSON.parse(document.getElementById("getTokenByPassword.result").innerText).content.token;
+                }
+                else { document.getElementById("getUserByToken.result").innerText = "token=null"; return; }
+
+                // ActionModel
+                var actionModel = {};
+
+                // Headers
+                var headers = {};
+                headers["Authorization"] = "Bearer " + token;
+
+                // Post
+                postRequst("/Account/GetUser", actionModel, headers)
+
+                    // Success
+                    .then(function (response) {
+                        document.getElementById("getUserByToken.result").innerText = JSON.stringify(response, null, 2);
+                    })
+
+                    // Error
+                    .catch(function (error) {
+                        document.getElementById("getUserByToken.result").innerText = JSON.stringify(error, null, 2);
+                    });
+            });
+
+            // FindAllMetroLine
+            document.getElementById("findAllMetroLine.button").addEventListener("click", event => {
+
+                // Variables
+                var token = null;
+                if (document.getElementById("getTokenByPassword.result").innerText != "") {
+                    token = JSON.parse(document.getElementById("getTokenByPassword.result").innerText).content.token;
+                }
+                else { document.getElementById("getUserByToken.result").innerText = "token=null"; return; }
+
+                // ActionModel
+                var actionModel = {};
+
+                // Headers
+                var headers = {};
+                headers["Authorization"] = "Bearer " + token;
+
+                // Post
+                postRequst("/Sinyi-SA-Commons/MetroLine/FindAll", actionModel, headers)
+
+                    // Success
+                    .then(function (response) {
+                        document.getElementById("findAllMetroLine.result").innerText = JSON.stringify(response, null, 2);
+                    })
+
+                    // Error
+                    .catch(function (error) {
+                        document.getElementById("findAllMetroLine.result").innerText = JSON.stringify(error, null, 2);
+                    });
+            });
+        };
+    </script>
+</head>
+<body>
+
+    <!--Title-->
+    <h2>Sinyi.SuperAgent|011</h2>
+    <hr />
+
+    <!--GetTokenByPassword-->
+    <input id="getTokenByPassword.button" type="button" value="GetTokenByPassword" /><br />
+    <input id="getTokenByPassword.username" type="text" value="441942" /><br />
+    <input id="getTokenByPassword.password" type="password" value="" /><br />
+    <div id="getTokenByPassword.result"></div><br />
+    <hr />
+
+    <!--GetUserByToken-->
+    <input id="getUserByToken.button" type="button" value="GetUserByToken" /><br />
+    <div id="getUserByToken.result"></div><br />
+    <hr />
+
+    <!--FindAllMetroLine-->
+    <input id="findAllMetroLine.button" type="button" value="FindAllMetroLine" /><br />
+    <div id="findAllMetroLine.result"></div><br />
+    <hr />
+
+</body>
+</html>

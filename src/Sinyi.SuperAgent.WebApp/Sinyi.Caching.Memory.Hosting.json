@@ -1,0 +1,7 @@
+{
+  "Sinyi.Caching.Memory": {
+
+    // Cache
+    "MemoryCacheClient": ""
+  }
+}
